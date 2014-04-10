@@ -18,6 +18,8 @@
 		EBB89F2D18F6BFEE000CEA0F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB89F0C18F6BFEE000CEA0F /* Cocoa.framework */; };
 		EBB89F3518F6BFEE000CEA0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBB89F3318F6BFEE000CEA0F /* InfoPlist.strings */; };
 		EBB89F3718F6BFEE000CEA0F /* FileListerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB89F3618F6BFEE000CEA0F /* FileListerTests.m */; };
+		EBB89F4218F6C016000CEA0F /* FileListController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB89F4118F6C016000CEA0F /* FileListController.m */; };
+		EBB89F4518F6C036000CEA0F /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB89F4418F6C036000CEA0F /* File.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,10 @@
 		EBB89F3218F6BFEE000CEA0F /* FileListerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FileListerTests-Info.plist"; sourceTree = "<group>"; };
 		EBB89F3418F6BFEE000CEA0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EBB89F3618F6BFEE000CEA0F /* FileListerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileListerTests.m; sourceTree = "<group>"; };
+		EBB89F4018F6C016000CEA0F /* FileListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileListController.h; sourceTree = "<group>"; };
+		EBB89F4118F6C016000CEA0F /* FileListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileListController.m; sourceTree = "<group>"; };
+		EBB89F4318F6C036000CEA0F /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		EBB89F4418F6C036000CEA0F /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,10 @@
 		EBB89F1218F6BFEE000CEA0F /* FileLister */ = {
 			isa = PBXGroup;
 			children = (
+				EBB89F4018F6C016000CEA0F /* FileListController.h */,
+				EBB89F4118F6C016000CEA0F /* FileListController.m */,
+				EBB89F4318F6C036000CEA0F /* File.h */,
+				EBB89F4418F6C036000CEA0F /* File.m */,
 				EBB89F1E18F6BFEE000CEA0F /* AppDelegate.h */,
 				EBB89F1F18F6BFEE000CEA0F /* AppDelegate.m */,
 				EBB89F2118F6BFEE000CEA0F /* MainMenu.xib */,
@@ -252,6 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBB89F4218F6C016000CEA0F /* FileListController.m in Sources */,
+				EBB89F4518F6C036000CEA0F /* File.m in Sources */,
 				EBB89F2018F6BFEE000CEA0F /* AppDelegate.m in Sources */,
 				EBB89F1918F6BFEE000CEA0F /* main.m in Sources */,
 			);
