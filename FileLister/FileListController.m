@@ -17,9 +17,23 @@
     self = [super init];
     if (self) {
         fileListArray = [[NSMutableArray alloc] init];
+        [self addSampleFiles];
     }
-    [self addSampleFiles];
+   
     return self;
+}
+
+-(void)doSomething:(NSArray *)files {
+    NSLog(@"do something called");
+    for (id file in files) {
+        NSLog(@" the file is : %@",file);
+        
+            File *f = [[File alloc] init];
+            [f createFromFilePathString:file];
+    
+            [fileListArray addObject:f];
+            [fileListView reloadData];
+    }
 }
 
 #pragma mark -- Actions
@@ -37,37 +51,6 @@
 }
 
 
-#pragma mark -- Test data methods
-- (void)addOneTestFile {
-    File *f = [[File alloc] init];
-    [fileListArray addObject:f];
-    [fileListView reloadData];
-}
-
-- (void)addSampleFiles {
-    File *f1 = [[File alloc] init];
-    f1.fileName = @"file1.txt";
-    f1.fileSize = 1231;
-    [fileListArray addObject:f1];
-    
-    File *f2 = [[File alloc] init];
-    f2.fileName = @"file2.txt";
-    f2.fileSize = 1232;
-    [fileListArray addObject:f2];
-    
-    File *f3 = [[File alloc] init];
-    f3.fileName = @"file3.txt";
-    f3.fileSize = 1233;
-    [fileListArray addObject:f3];
-    
-    File *f4 = [[File alloc] init];
-    f4.fileName = @"file4.txt";
-    f4.fileSize = 1234;
-    [fileListArray addObject:f4];
-    
-    [fileListView reloadData];
-}
-
 
 #pragma mark -- NSTableView protocol methods
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
@@ -79,5 +62,39 @@
     NSString *identifier = [tableColumn identifier];
     return [p valueForKey:identifier];
     }
+
+#pragma mark -- Test data methods
+- (void)addOneTestFile {
+    File *f = [[File alloc] init];
+    f.fileName = @"~/Desktop/temp/file1.txt";
+    [fileListArray addObject:f];
+    [fileListView reloadData];
+}
+
+- (void)addSampleFiles {
+    File *f1 = [[File alloc] init];
+    [f1 createFromFilePathString:@"/Users/dazza/Desktop/temp/file 1.txt"];
+    [fileListArray addObject:f1];
+    
+    File *f2 = [[File alloc] init];
+    [f2 createFromFilePathString:@"/Users/dazza/Desktop/temp/file2.txt"];
+    [fileListArray addObject:f2];
+    
+    File *f3 = [[File alloc] init];
+    [f3 createFromFilePathString:@"/Users/dazza/Desktop/temp/file3.txt"];
+    [fileListArray addObject:f3];
+    
+    File *f4 = [[File alloc] init];
+    [f4 createFromFilePathString:@"/Users/dazza/Desktop/temp/file4.txt"];
+    [fileListArray addObject:f4];
+    
+    File *f5 = [[File alloc] init];
+    [f5 createFromFilePathString:@"/Users/dazza/Desktop/temp/file5.txt"];
+    [fileListArray addObject:f5];
+    
+    [fileListView reloadData];
+}
+
+
 @end
 

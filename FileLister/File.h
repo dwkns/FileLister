@@ -13,7 +13,9 @@
 //    int fileSize;
 }
 
-@property (copy) NSString *fileName;
-@property int fileSize;
+@property (nonatomic, copy) NSString *fileName;
+@property (nonatomic, copy) NSString *fileSize;
+@property  (nonatomic, copy) NSURL *fileURL;
+- (void)createFromFilePathString:(NSString *)fileNameString;
 
 @end

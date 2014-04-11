@@ -8,19 +8,30 @@
 
 #import "File.h"
 
-@implementation File {
+@implementation File 
 
+- (void)createFromFilePathString:(NSString *)fileNameString {
+    
+    // Convert the String to a escaped / encoded string.
+    fileNameString = [fileNameString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+   
+    // Create a URL from the encoded string
+    _fileURL =  [NSURL URLWithString:fileNameString];
+    
+    // Create a file manager to get the file details
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSDictionary *attribs = [fm attributesOfItemAtPath:_fileURL.path error:nil];
+    
+    //Convert the filesize attribute to a bytes / KB / MB formatted string.
+    _fileSize = [NSByteCountFormatter stringFromByteCount:[attribs fileSize]
+                                               countStyle:NSByteCountFormatterCountStyleFile];
 
+    _fileName = _fileURL.lastPathComponent;
+    
+   
 }
-
-
--(id)init {
-    self = [super init];
-    if (self) {
-        _fileName = @"testFile";
-        _fileSize = 123;
-    }
-    return self;
-}
-
 @end
+
+
+
+

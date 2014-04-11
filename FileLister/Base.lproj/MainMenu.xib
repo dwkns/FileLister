@@ -674,10 +674,10 @@
         <window title="FileLister" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="319"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="444"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="319"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="444"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" id="NeL-tb-yo5">
@@ -692,14 +692,14 @@
                         </connections>
                     </button>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="hvE-W7-KUQ">
-                        <rect key="frame" x="20" y="61" width="440" height="238"/>
+                        <rect key="frame" x="20" y="55" width="440" height="369"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="gLb-2Q-E92">
-                            <rect key="frame" x="1" y="17" width="438" height="220"/>
+                            <rect key="frame" x="1" y="17" width="438" height="351"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="NoZ-hb-blt" id="FaT-pS-NL8" customClass="TableViewDropper">
-                                    <rect key="frame" x="0.0" y="0.0" width="438" height="220"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="438" height="351"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -734,6 +734,7 @@
                                     </tableColumns>
                                     <connections>
                                         <outlet property="dataSource" destination="HvR-a8-gdm" id="ZvE-pT-oqX"/>
+                                        <outlet property="delegate" destination="HvR-a8-gdm" id="2Or-Wq-VgR"/>
                                     </connections>
                                 </tableView>
                             </subviews>

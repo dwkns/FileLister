@@ -12,53 +12,48 @@
     BOOL highlight;
 }
 
-
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-        NSLog(@"init in initWithFrame in TableViewDropper.h");
-        [self registerForDraggedTypes:@[NSFilenamesPboardType]];
-    }
-    return self;
+- (void) awakeFromNib {
+    [self registerForDraggedTypes:@[NSFilenamesPboardType]];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        // Initialization code here.
-        NSLog(@"init in initWithCoder in TableViewDropper.h");
-        [self registerForDraggedTypes:@[NSFilenamesPboardType]];
-    }
-    return self;
-    
+// Stop the NSTableView implementation getting in the way
+- (NSDragOperation)draggingUpdated:(id <NSDraggingInfo>)sender {
+	return [self draggingEntered:sender];
 }
 
+#pragma GCC diagnostic ignored "-Wundeclared-selector"
 - (BOOL)performDragOperation:(id < NSDraggingInfo >)sender {
     NSLog(@"performDragOperation in TableViewDropper.h");
+    
+    NSPasteboard *pboard = [sender draggingPasteboard];
+    NSArray *filenames = [pboard propertyListForType:NSFilenamesPboardType];
+    
+    id delegate = [self delegate];
+    
+    if ([delegate respondsToSelector:@selector(doSomething:)]) {
+        [delegate performSelector:@selector(doSomething:) withObject:filenames];
+    }
+    
+    highlight=NO;
+    [self setNeedsDisplay: YES];
     return YES;
 }
 
 
 - (BOOL)prepareForDragOperation:(id)sender {
     NSLog(@"prepareForDragOperation called in TableViewDropper.h");
-    NSPasteboard *pboard = [sender draggingPasteboard];
-    NSArray *filenames = [pboard propertyListForType:NSFilenamesPboardType];
-    
-    
-    NSLog(@"%@",filenames);
     return YES;
 }
 
+
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender
 {
-    highlight=YES;
-    [self setNeedsDisplay: YES];
-    NSLog(@"drag entered in TableViewDropper.h");
-    
-    // this defines what the drop target can do
-    // Can be copy, link, move, delete or none to do nothing.
+    if (highlight==NO) {
+        NSLog(@"drag entered in TableViewDropper.h");
+        highlight=YES;
+        [self setNeedsDisplay: YES];
+    }
+   
     return NSDragOperationCopy;
 }
 
