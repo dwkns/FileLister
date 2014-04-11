@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
     </dependencies>
@@ -671,41 +671,32 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="FileLister" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+        <window title="FileLister" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="444"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <rect key="contentRect" x="424" y="280" width="500" height="450"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <value key="minSize" type="size" width="400" height="300"/>
+            <value key="maxSize" type="size" width="900" height="600"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="444"/>
+                <rect key="frame" x="0.0" y="0.0" width="500" height="450"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" id="NeL-tb-yo5">
-                        <rect key="frame" x="400" y="13" width="66" height="32"/>
+                    <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvE-W7-KUQ">
+                        <rect key="frame" x="-1" y="33" width="482" height="389"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QUa-mj-eOd">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="add:" target="HvR-a8-gdm" id="tLm-4p-uKf"/>
-                        </connections>
-                    </button>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="hvE-W7-KUQ">
-                        <rect key="frame" x="20" y="55" width="440" height="369"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" id="gLb-2Q-E92">
-                            <rect key="frame" x="1" y="17" width="438" height="351"/>
+                        <clipView key="contentView" misplaced="YES" id="gLb-2Q-E92">
+                            <rect key="frame" x="1" y="17" width="480" height="371"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="NoZ-hb-blt" id="FaT-pS-NL8" customClass="TableViewDropper">
-                                    <rect key="frame" x="0.0" y="0.0" width="438" height="351"/>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" headerView="x2w-WH-W2Y" id="FaT-pS-NL8" customClass="TableViewDropper">
+                                    <rect key="frame" x="0.0" y="0.0" width="500" height="371"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="fileName" width="328.86328125" minWidth="40" maxWidth="1000" id="XeE-i2-NrE">
+                                        <tableColumn identifier="fileName" editable="NO" width="373.86328125" minWidth="40" maxWidth="1000" id="XeE-i2-NrE">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="File Name">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -718,7 +709,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         </tableColumn>
-                                        <tableColumn identifier="fileSize" width="103" minWidth="40" maxWidth="1000" id="Xo9-FQ-Mz0">
+                                        <tableColumn identifier="fileSize" editable="NO" width="100" minWidth="100" maxWidth="100" id="Xo9-FQ-Mz0">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="File Size">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -741,20 +732,20 @@
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="G7d-6B-dx2">
-                            <rect key="frame" x="1" y="1" width="0.0" height="16"/>
+                            <rect key="frame" x="1" y="372" width="480" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ph3-p1-6Vg">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="ph3-p1-6Vg">
                             <rect key="frame" x="-15" y="17" width="16" height="0.0"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <tableHeaderView key="headerView" id="NoZ-hb-blt">
-                            <rect key="frame" x="0.0" y="0.0" width="438" height="17"/>
+                        <tableHeaderView key="headerView" id="x2w-WH-W2Y">
+                            <rect key="frame" x="0.0" y="0.0" width="500" height="17"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
-                    <button verticalHuggingPriority="750" id="dag-SQ-bRg">
-                        <rect key="frame" x="14" y="13" width="90" height="32"/>
+                    <button verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dag-SQ-bRg">
+                        <rect key="frame" x="0.0" y="-1" width="90" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XNp-xK-MfT">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -765,6 +756,13 @@
                         </connections>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="hvE-W7-KUQ" secondAttribute="bottom" constant="33" id="0Kb-vN-cKt"/>
+                    <constraint firstItem="hvE-W7-KUQ" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="32" id="DRK-8b-eRb"/>
+                    <constraint firstAttribute="trailing" secondItem="hvE-W7-KUQ" secondAttribute="trailing" constant="-1" id="Ddr-Uh-eYu"/>
+                    <constraint firstAttribute="bottom" secondItem="dag-SQ-bRg" secondAttribute="bottom" constant="6" id="Zrt-xl-jvr"/>
+                    <constraint firstItem="hvE-W7-KUQ" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="-1" id="mdV-6C-xMT"/>
+                </constraints>
             </view>
         </window>
     </objects>
