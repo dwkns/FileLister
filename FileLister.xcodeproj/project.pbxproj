@@ -20,6 +20,7 @@
 		EBB89F3718F6BFEE000CEA0F /* FileListerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB89F3618F6BFEE000CEA0F /* FileListerTests.m */; };
 		EBB89F4218F6C016000CEA0F /* FileListController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB89F4118F6C016000CEA0F /* FileListController.m */; };
 		EBB89F4518F6C036000CEA0F /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB89F4418F6C036000CEA0F /* File.m */; };
+		EBB89F4818F6C976000CEA0F /* TableViewDropper.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB89F4718F6C976000CEA0F /* TableViewDropper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		EBB89F4118F6C016000CEA0F /* FileListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileListController.m; sourceTree = "<group>"; };
 		EBB89F4318F6C036000CEA0F /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
 		EBB89F4418F6C036000CEA0F /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
+		EBB89F4618F6C976000CEA0F /* TableViewDropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewDropper.h; sourceTree = "<group>"; };
+		EBB89F4718F6C976000CEA0F /* TableViewDropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewDropper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				EBB89F1E18F6BFEE000CEA0F /* AppDelegate.h */,
 				EBB89F1F18F6BFEE000CEA0F /* AppDelegate.m */,
 				EBB89F2118F6BFEE000CEA0F /* MainMenu.xib */,
+				EBB89F4618F6C976000CEA0F /* TableViewDropper.h */,
+				EBB89F4718F6C976000CEA0F /* TableViewDropper.m */,
 				EBB89F2418F6BFEE000CEA0F /* Images.xcassets */,
 				EBB89F1318F6BFEE000CEA0F /* Supporting Files */,
 			);
@@ -265,6 +270,7 @@
 				EBB89F4218F6C016000CEA0F /* FileListController.m in Sources */,
 				EBB89F4518F6C036000CEA0F /* File.m in Sources */,
 				EBB89F2018F6BFEE000CEA0F /* AppDelegate.m in Sources */,
+				EBB89F4818F6C976000CEA0F /* TableViewDropper.m in Sources */,
 				EBB89F1918F6BFEE000CEA0F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
