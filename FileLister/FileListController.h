@@ -13,7 +13,7 @@
     IBOutlet NSTableView *fileListView;
 
 }
--(IBAction)add:(id)sender;
+
 -(IBAction)remove:(id)sender;
 -(void)doSomething:(NSArray *)files;
 @end
