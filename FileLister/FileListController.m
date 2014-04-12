@@ -17,7 +17,7 @@
     self = [super init];
     if (self) {
         fileListArray = [[NSMutableArray alloc] init];
-        [self addSampleFiles];
+       
     }
    
     return self;
@@ -37,10 +37,6 @@
 }
 
 #pragma mark -- Actions
--(IBAction)add:(id)sender {
-    [self addOneTestFile];
-}
-
 -(IBAction)remove:(id)sender {
     NSInteger selectedRow = [fileListView selectedRow];
     if (selectedRow >= 0) {
@@ -49,7 +45,6 @@
     }
     
 }
-
 
 
 #pragma mark -- NSTableView protocol methods
@@ -63,37 +58,6 @@
     return [p valueForKey:identifier];
     }
 
-#pragma mark -- Test data methods
-- (void)addOneTestFile {
-    File *f = [[File alloc] init];
-    f.fileName = @"~/Desktop/temp/file1.txt";
-    [fileListArray addObject:f];
-    [fileListView reloadData];
-}
-
-- (void)addSampleFiles {
-    File *f1 = [[File alloc] init];
-    [f1 createFromFilePathString:@"/Users/dazza/Desktop/temp/file 1.txt"];
-    [fileListArray addObject:f1];
-    
-    File *f2 = [[File alloc] init];
-    [f2 createFromFilePathString:@"/Users/dazza/Desktop/temp/file2.txt"];
-    [fileListArray addObject:f2];
-    
-    File *f3 = [[File alloc] init];
-    [f3 createFromFilePathString:@"/Users/dazza/Desktop/temp/file3.txt"];
-    [fileListArray addObject:f3];
-    
-    File *f4 = [[File alloc] init];
-    [f4 createFromFilePathString:@"/Users/dazza/Desktop/temp/file4.txt"];
-    [fileListArray addObject:f4];
-    
-    File *f5 = [[File alloc] init];
-    [f5 createFromFilePathString:@"/Users/dazza/Desktop/temp/file5.txt"];
-    [fileListArray addObject:f5];
-    
-    [fileListView reloadData];
-}
 
 
 @end

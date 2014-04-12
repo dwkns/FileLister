@@ -484,6 +484,7 @@
 				EBB89F3C18F6BFEE000CEA0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBB89F3D18F6BFEE000CEA0F /* Build configuration list for PBXNativeTarget "FileListerTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +493,7 @@
 				EBB89F3F18F6BFEE000CEA0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
