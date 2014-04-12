@@ -38,7 +38,7 @@
 
 #pragma mark -- Actions
 - (IBAction)loadSomeFiles:(id)sender {
-    // Populate the list with the users Home Directory. 
+    // Populate the list with the users Home Directory.
     NSFileManager *fm =  [NSFileManager defaultManager];
     NSString *homeDir = NSHomeDirectory();
     NSArray *files =[fm contentsOfDirectoryAtPath:homeDir error:nil];
@@ -56,14 +56,9 @@
     
     NSIndexSet *indexes = [fileListView selectedRowIndexes];
     [fileListArray removeObjectsAtIndexes:indexes];
+    [fileListView deselectAll:sender];
     
     [fileListView reloadData];
-//    NSInteger selectedRow = [fileListView selectedRow];
-    
-//    if (selectedRow >= 0) {
-//        [fileListArray removeObjectAtIndex:selectedRow];
-//        [fileListView reloadData];
-//    }
     
 }
 
