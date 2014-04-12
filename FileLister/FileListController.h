@@ -14,6 +14,7 @@
 
 }
 
+- (IBAction)loadSomeFiles:(id)sender;
 -(IBAction)remove:(id)sender;
 -(void)doSomething:(NSArray *)files;
 @end

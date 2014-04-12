@@ -37,12 +37,33 @@
 }
 
 #pragma mark -- Actions
--(IBAction)remove:(id)sender {
-    NSInteger selectedRow = [fileListView selectedRow];
-    if (selectedRow >= 0) {
-        [fileListArray removeObjectAtIndex:selectedRow];
-        [fileListView reloadData];
+- (IBAction)loadSomeFiles:(id)sender {
+    // Populate the list with the users Home Directory. 
+    NSFileManager *fm =  [NSFileManager defaultManager];
+    NSString *homeDir = NSHomeDirectory();
+    NSArray *files =[fm contentsOfDirectoryAtPath:homeDir error:nil];
+     for (id file in files) {
+        File *f = [[File alloc] init];
+        NSString *fileWithPath = [NSString stringWithFormat:@"%@/%@",homeDir,file];
+        [f createFromFilePathString:fileWithPath];
+        [fileListArray addObject:f];
     }
+    
+    [fileListView reloadData];
+}
+
+-(IBAction)remove:(id)sender {
+    
+    NSIndexSet *indexes = [fileListView selectedRowIndexes];
+    [fileListArray removeObjectsAtIndexes:indexes];
+    
+    [fileListView reloadData];
+//    NSInteger selectedRow = [fileListView selectedRow];
+    
+//    if (selectedRow >= 0) {
+//        [fileListArray removeObjectAtIndex:selectedRow];
+//        [fileListView reloadData];
+//    }
     
 }
 
